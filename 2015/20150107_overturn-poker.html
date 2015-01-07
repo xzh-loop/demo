@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<title>扑克牌翻转动画[CSS3][gte IE10]</title>
+</head>
+<!--
+ [gte IE10]支持该动画
+ [IE7 - IE8]有:hover
+ [IE6]不支持:hover，需手动添加.hover，z-index只针对IE6
+ -->
+<style type="text/css">
+#container {position:relative;margin:100px auto;width:100px;height:162px;}
+#container div {
+	position:absolute; width:100%; height:100%;
+	-webkit-transition: 1.5s ease-in-out;
+	   -moz-transition: 1.5s ease-in-out;
+		-ms-transition: 1.5s ease-in-out;
+		 -o-transition: 1.5s ease-in-out;
+			transition: 1.5s ease-in-out;
+	-webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+			backface-visibility: hidden;
+}
+#container .lower {
+	background:limegreen; 
+	-webkit-transform: perspective(800px) rotateY(180deg);
+	   -moz-transform: perspective(800px) rotateY(180deg);
+			transform: perspective(800px) rotateY(180deg);
+}
+#container .upper {
+	background:gold;
+	-webkit-transform: perspective(800px) rotateY(0deg);
+	   -moz-transform: perspective(800px) rotateY(0deg);
+			transform: perspective(800px) rotateY(0deg);
+	 
+}
+#container:hover .lower, #container.hover .lower {
+	z-index; /*#container.hover .lower*//*for IE6*/
+	-webkit-transform: perspective(800px) rotateY(0);
+	   -moz-transform: perspective(800px) rotateY(0);
+			transform: perspective(800px) rotateY(0);
+}
+#container:hover .upper {
+	-webkit-transform: perspective(800px) rotateY(-179.9deg);
+	   -moz-transform: perspective(800px) rotateY(-179.9deg);
+			transform: perspective(800px) rotateY(-179.9deg);
+}
+</style>
+<div id="container">
+	<div class="lower">yyy</div>
+	<div class="upper">xxx</div>
+</div>
