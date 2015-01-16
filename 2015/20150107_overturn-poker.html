@@ -46,6 +46,10 @@
 			transform: perspective(800px) rotateY(-179.9deg);
 }
 </style>
+ [gte IE10]支持该动画<br>
+ [IE7 - IE8]有:hover<br>
+ [IE6]不支持:hover，需手动添加.hover，z-index只针对IE6<br>
+ 我手机QQ浏览的问题是：有翻转动画，翻转结束瞬间，背面突然又盖住了正面，最后的解决办法是，给触发样式添加正反面的z-index可解决该问题。
 <div id="container">
 	<div class="lower">yyy</div>
 	<div class="upper">xxx</div>
